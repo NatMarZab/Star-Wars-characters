@@ -3,6 +3,7 @@ import "./stylesheets/App.css";
 import logo from "./images/starwarslogo.png";
 import { Route, Switch } from "react-router-dom";
 import getDataFromApi from "../services/Api";
+import CharacterList from "./CharacterList";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -14,7 +15,8 @@ const App = () => {
       });
     }
   }, []);
-  //funcion manejadora
+
+  //método para recorrer y filtrar el array de objetos
 
   //renderización del html
   return (
@@ -26,7 +28,7 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <section className="section">
-              <p>probando que funciona</p>
+              <CharacterList dataList={characters} />
             </section>
           </Route>
         </Switch>
