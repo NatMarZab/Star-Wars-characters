@@ -7,8 +7,6 @@ const CharacterPackage = (props) => {
     <Link to={`/character/${props.character.id}`}>
       <article className="characterArticlePack">
         <h4 className="characterTitle">{props.character.name}</h4>
-        <p>{props.character.gender}</p>
-        <p className="species">{props.character.species}</p>
       </article>
     </Link>
   );

@@ -4,6 +4,7 @@ import logo from "./images/starwarslogo.png";
 import { Route, Switch } from "react-router-dom";
 import getDataFromApi from "../services/Api";
 import CharacterList from "./CharacterList";
+import CharacterDetail from "./CharacterDetail";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -22,7 +23,7 @@ const App = () => {
   return (
     <>
       <header>
-        <h1 className="title">Star Wars</h1>
+        <img src={logo} alt="Star Wars" className="logo" />
       </header>
       <main>
         <Switch>
@@ -31,6 +32,10 @@ const App = () => {
               <CharacterList dataList={characters} />
             </section>
           </Route>
+          <Route
+            path="/character/:characterId"
+            render={renderCharacterDetail}
+          ></Route>
         </Switch>
       </main>
     </>
