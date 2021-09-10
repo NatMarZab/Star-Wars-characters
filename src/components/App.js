@@ -17,7 +17,8 @@ const App = () => {
     }
   }, []);
 
-  //método para recorrer y filtrar el array de objetos
+  //funcion manejadora
+  const handleEvent = () =>
 
   //renderización del html
   return (
