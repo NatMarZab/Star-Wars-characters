@@ -15,26 +15,23 @@ const App = () => {
     }
   }, []);
   //funcion manejadora
-  const listByName = characters.filter((character) => {
-    return character.name}
-    console.log(character.name));
 
-    //renderización del html
+  //renderización del html
   return (
-      <>
-        <header>
-          <h1 className="title">Star Wars</h1>
-        </header>
-        <main>
-          <Switch>
-            <Route exact path="/">
-              <section className="section">
-                <p>probando que funciona</p>
-              </section>
-            </Route>
-          </Switch>
-        </main>
-      </>
-    );
+    <>
+      <header>
+        <h1 className="title">Star Wars</h1>
+      </header>
+      <main>
+        <Switch>
+          <Route exact path="/">
+            <section className="section">
+              <p>probando que funciona</p>
+            </section>
+          </Route>
+        </Switch>
+      </main>
+    </>
+  );
 };
 export default App;
