@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./stylesheets/App.css";
+import logo from "./images/starwarslogo.png";
 
-function App() {
+const App = () => {
+  const [characters, setCharacters] = useState([]);
+  //llamada a la API al cargar página
+  useEffect(() => {
+    if (characters.length === 0) {
+      getDataFromApi().then((charactersData) => {
+        setCharacters(charactersData);
+      });
+    }
+  }, []);
+  //funcion manejadora
+
+  //renderización del html
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <h1 className="title">Star Wars</h1>
       </header>
-    </div>
+      <main>
+        <Switch>
+          <Route exact path="/">
+            <section className="section">
+              <Filter
+                handleFilter={handleEvent}
+                filteredName={filteredName}
+                filteredGender={filteredGender}
+              />
+              <CharacterList
+                dataList={filteredCharacters}
+                filteredName={filteredName}
+              />
+            </section>
+          </Route>
+          <Route
+            path="/character/:characterId"
+            render={renderCharacterDetail}
+          ></Route>
+        </Switch>
+      </main>
+    </>
   );
-}
-
+};
 export default App;
