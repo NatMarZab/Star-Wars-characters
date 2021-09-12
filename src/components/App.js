@@ -19,7 +19,15 @@ const App = () => {
 
   //funcion manejadora
   //const handleEvent = () =>
-
+  const renderCharacterDetail = (routerProps) => {
+    const routeCharacterName = routerProps.match.params.characterName;
+    const characterFound = characters.find(
+      (character) => character.name === routeCharacterName
+    );
+    return (
+      <CharacterDetail specificCharacter={characterFound}></CharacterDetail>
+    );
+  };
   //renderización del html
   return (
     <>
@@ -34,8 +42,8 @@ const App = () => {
             </section>
           </Route>
           <Route
-          //  path="/character/:characterId"
-          //  render={renderCharacterDetail}
+            path="/character/:characterName"
+            render={renderCharacterDetail}
           ></Route>
         </Switch>
       </main>
