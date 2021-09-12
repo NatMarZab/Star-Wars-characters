@@ -2,7 +2,7 @@ import React from "react";
 import "../stylesheets/layout/orderingButton.scss";
 
 const OrderingButton = (props) => {
-  const handleClick = () => {
+  const handleClick = (ev) => {
     props.handleClick();
   };
   return (
