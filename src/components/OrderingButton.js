@@ -2,8 +2,11 @@ import React from "react";
 import "../stylesheets/layout/orderingButton.scss";
 
 const OrderingButton = (props) => {
+  const handleClick = () => {
+    props.handleClick();
+  };
   return (
-    <button className="orderingButton" onClick={handleButton}>
+    <button className="orderingButton" type="button" onClick={handleClick}>
       Ordenar por {props.variable1}
     </button>
   );
