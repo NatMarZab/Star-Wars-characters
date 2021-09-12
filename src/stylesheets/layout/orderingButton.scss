@@ -1,0 +1,16 @@
+.orderingButton {
+  background-color: #e17334;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 18px 13px 17px;
+  width: 199px;
+  height: 50px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: $fontText;
+  font-weight: 200;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

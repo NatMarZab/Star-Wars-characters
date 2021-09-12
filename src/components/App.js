@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import getDataFromApi from "../services/Api";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
+import OrderingButton from "./OrderingButton.js";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -35,6 +36,10 @@ const App = () => {
         <img src={logo} alt="Star Wars" className="logo" />
       </header>
       <main>
+        <section className="buttons">
+          <OrderingButton variable1={"nombre"} />
+          <OrderingButton variable2={"altura"} />
+        </section>
         <Switch>
           <Route exact path="/">
             <section className="section">
