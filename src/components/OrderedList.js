@@ -27,6 +27,6 @@ const OrderedList = (props) => {
   //  return ( characterA.name.toLowerCase().localeCompare(characterB.name.toLowerCase()));
   //  });
 
-  return <ul className="characterList">{charactersInfo}</ul>;
+  return <ul className="characterList">{orderedList}</ul>;
 };
 export default OrderedList;
