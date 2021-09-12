@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./stylesheets/App.css";
+import "./stylesheets/App.scss";
 import logo from "./images/starwarslogo.png";
 import { Route, Switch } from "react-router-dom";
 import getDataFromApi from "../services/Api";
@@ -18,7 +18,7 @@ const App = () => {
   }, []);
 
   //funcion manejadora
-  const handleEvent = () =>
+  //const handleEvent = () =>
 
   //renderización del html
   return (
@@ -34,8 +34,8 @@ const App = () => {
             </section>
           </Route>
           <Route
-            path="/character/:characterId"
-            render={renderCharacterDetail}
+          //  path="/character/:characterId"
+          //  render={renderCharacterDetail}
           ></Route>
         </Switch>
       </main>

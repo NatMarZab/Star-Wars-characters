@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../stylesheet/layout/_characterCard.scss";
+import "../stylesheets/layout/characterPackage.scss";
 
 const CharacterPackage = (props) => {
   return (

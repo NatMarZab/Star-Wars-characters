@@ -1,6 +1,6 @@
 import React from "react";
-import CharacterPackage from "./CharacterCard";
-import "../stylesheet/layout/characterList.scss";
+import CharacterPackage from "./CharacterPackage";
+import "../stylesheets/layout/characterList.scss";
 
 const CharacterList = (props) => {
   const charactersInfo = props.dataList.map((character) => {
