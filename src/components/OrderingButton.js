@@ -7,7 +7,7 @@ const OrderingButton = (props) => {
   };
   return (
     <button className="orderingButton" type="button" onClick={handleClick}>
-      Ordenar por {props.variable1}
+      Ordenar por {props.variable}
     </button>
   );
 };

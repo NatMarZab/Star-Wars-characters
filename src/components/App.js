@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./stylesheets/App.scss";
-import logo from "./images/starwarslogo.png";
+import "../stylesheets/App.scss";
+import logo from "../images/starwarslogo.png";
 import { Route, Switch } from "react-router-dom";
 import getDataFromApi from "../services/Api";
 import CharacterList from "./CharacterList";
@@ -32,13 +32,13 @@ const App = () => {
   //renderización del html
   return (
     <>
-      <header>
+      <header className="header">
         <img src={logo} alt="Star Wars" className="logo" />
       </header>
       <main>
         <section className="buttons">
-          <OrderingButton variable1={"nombre"} />
-          <OrderingButton variable2={"altura"} />
+          <OrderingButton variable={"nombre"} />
+          <OrderingButton variable={"altura"} />
         </section>
         <Switch>
           <Route exact path="/">
