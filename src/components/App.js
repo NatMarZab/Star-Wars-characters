@@ -20,7 +20,7 @@ const App = () => {
   }, []);
 
   //funcion manejadora
-  const handleClick = (characters, keyWord) => {
+  const handleClick = (ev, keyWord) => {
     if (keyWord === "name") {
       //PLAN A, para el nombre; tengo dudas de si debo hacer un map primero para nombrar el "character"
       function compareNameParam(characterA, characterB) {
@@ -35,17 +35,17 @@ const App = () => {
       const orderedArrayByName = [...characters].sort(compareNameParam);
       //PLAN B:
       //const orderedArrayByName = characters.sort(a, b) => a.name.localeCompare(b.name);
+      console.log("Name", orderedArrayByName);
       return setCharacters(orderedArrayByName);
     } else if (keyWord === "height") {
-      /*  function compareHeightParam(a, b) {
-        return a.height > b.height;
-      }*/
-      const orderedArrayByHeight = characters.sort(
-        (a, b) => a.height > b.height
-      );
-      setCharacters(orderedArrayByHeight);
+      const orderedArrayByHeight = [...characters].sort(function (a, b) {
+        //console.log(a.height, b.height)
+        return parseInt(a.height) - parseInt(b.height);
+      });
+      console.log("Altura", characters);
+
+      return setCharacters(orderedArrayByHeight);
     }
-    console.log(characters);
   };
 
   const renderCharacterDetail = (routerProps) => {
