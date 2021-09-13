@@ -9,6 +9,7 @@ import OrderingButton from "./OrderingButton.js";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
+
   //llamada a la API al cargar página
   useEffect(() => {
     if (characters.length === 0) {
@@ -19,7 +20,34 @@ const App = () => {
   }, []);
 
   //funcion manejadora
-  //const handleEvent = () =>
+  const handleClick = (characters, keyWord) => {
+    if (keyWord === "name") {
+      //PLAN A, para el nombre; tengo dudas de si debo hacer un map primero para nombrar el "character"
+      function compareNameParam(characterA, characterB) {
+        if (characterA.name < characterB.name) {
+          return -1;
+        } else if (characterA.name > characterB.name) {
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+      const orderedArrayByName = [...characters].sort(compareNameParam);
+      //PLAN B:
+      //const orderedArrayByName = characters.sort(a, b) => a.name.localeCompare(b.name);
+      return setCharacters(orderedArrayByName);
+    } else if (keyWord === "height") {
+      /*  function compareHeightParam(a, b) {
+        return a.height > b.height;
+      }*/
+      const orderedArrayByHeight = characters.sort(
+        (a, b) => a.height > b.height
+      );
+      setCharacters(orderedArrayByHeight);
+    }
+    console.log(characters);
+  };
+
   const renderCharacterDetail = (routerProps) => {
     const routeCharacterName = routerProps.match.params.characterName;
     const characterFound = characters.find(
@@ -29,6 +57,7 @@ const App = () => {
       <CharacterDetail specificCharacter={characterFound}></CharacterDetail>
     );
   };
+
   //renderización del html
   return (
     <>
@@ -37,8 +66,16 @@ const App = () => {
       </header>
       <main>
         <section className="buttons">
-          <OrderingButton variable={"nombre"} />
-          <OrderingButton variable={"altura"} />
+          <OrderingButton
+            criterion={"nombre"}
+            keyWord={"name"}
+            handleClick={handleClick}
+          />
+          <OrderingButton
+            criterion={"altura"}
+            keyWord={"height"}
+            handleClick={handleClick}
+          />
         </section>
         <Switch>
           <Route exact path="/">

@@ -3,11 +3,12 @@ import "../stylesheets/layout/orderingButton.scss";
 
 const OrderingButton = (props) => {
   const handleClick = (ev) => {
-    props.handleClick();
+    const keyWord = props.keyWord;
+    return props.handleClick(ev, keyWord);
   };
   return (
     <button className="orderingButton" type="button" onClick={handleClick}>
-      Ordenar por {props.variable}
+      Ordenar por {props.criterion}
     </button>
   );
 };
