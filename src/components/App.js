@@ -10,7 +10,6 @@ import OrderingButton from "./OrderingButton.js";
 const App = () => {
   const [characters, setCharacters] = useState([]);
 
-  //llamada a la API al cargar página
   useEffect(() => {
     if (characters.length === 0) {
       getDataFromApi().then((charactersData) => {
@@ -19,10 +18,8 @@ const App = () => {
     }
   }, []);
 
-  //funcion manejadora
   const handleClick = (ev, keyWord) => {
     if (keyWord === "name") {
-      //PLAN A, para el nombre; tengo dudas de si debo hacer un map primero para nombrar el "character"
       function compareNameParam(characterA, characterB) {
         if (characterA.name < characterB.name) {
           return -1;
@@ -33,8 +30,7 @@ const App = () => {
         }
       }
       const orderedArrayByName = [...characters].sort(compareNameParam);
-      //PLAN B:
-      //const orderedArrayByName = characters.sort(a, b) => a.name.localeCompare(b.name);
+
       console.log("Name", orderedArrayByName);
       return setCharacters(orderedArrayByName);
     } else if (keyWord === "height") {
@@ -58,7 +54,6 @@ const App = () => {
     );
   };
 
-  //renderización del html
   return (
     <>
       <header className="header">

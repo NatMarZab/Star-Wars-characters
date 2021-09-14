@@ -10,12 +10,6 @@ const OrderedList = (props) => {
       </li>
     );
   });
-
-  //OPCIÓN 2:
-  //const charactersOrderedList = props.characters.sort(function (characterA, characterB) {
-  //  return ( characterA.name.toLowerCase().localeCompare(characterB.name.toLowerCase()));
-  //  });
-
   return <ul className="orderedList">{orderedList}</ul>;
 };
 export default OrderedList;
