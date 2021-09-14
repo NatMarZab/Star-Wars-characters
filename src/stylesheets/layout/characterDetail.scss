@@ -3,8 +3,16 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 300px;
-  margin-left: 42%;
+  width: 200px;
+  margin-left: 20%;
+  margin-top: 20px;
+  @media all and (min-width: 768px) {
+    width: 256px;
+    margin-left: 33%;
+  }
+  @media all and (min-width: 1200px) {
+    margin-left: 40%;
+  }
 }
 .link {
   text-align: right;
@@ -12,7 +20,7 @@
 }
 .stylesDetail {
   display: flex;
-  background-color: yellow;
+  background-color: #f4d03f;
 }
 .characterTitle {
   justify-content: center;

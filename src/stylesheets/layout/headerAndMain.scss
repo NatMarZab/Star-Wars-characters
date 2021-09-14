@@ -1,13 +1,22 @@
 .header {
   display: flex;
   justify-content: center;
+
+  @media all and (min-width: 768px) {
+    justify-content: center;
+    margin-left: 0px;
+  }
 }
 .logo {
-  width: 600px;
+  box-sizing: content-box;
+  height: 82.5px;
   margin-top: 50px;
   margin-bottom: 50px;
-  display: flex;
-  justify-content: center;
+
+  @media all and (min-width: 768px) {
+    width: 600px;
+    height: 230px;
+  }
 }
 .section {
   margin-top: 30px;

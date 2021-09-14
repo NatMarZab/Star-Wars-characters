@@ -3,16 +3,35 @@
   border: none;
   border-radius: 12px;
   padding: 13px 18px 13px 17px;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 199px;
+  margin-left: 12px;
+  margin-right: 12px;
+  width: 115px;
   height: 50px;
-  font-size: 12px;
+  font-size: 9px;
   text-transform: uppercase;
   font-weight: 200;
   color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  line-height: 1.7;
+  line-height: 1.4;
+  transition: all 500ms ease;
+  @media all and (min-width: 768px) {
+    width: 199px;
+    font-size: 12px;
+    padding-left: 2px;
+    padding-right: 2px;
+    line-height: 1.7;
+  }
+  @media all and (min-width: 1200px) {
+    font-size: 12px;
+    display: flex;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+button:hover {
+  background-color: #f0b27a;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
